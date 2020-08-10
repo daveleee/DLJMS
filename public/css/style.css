@@ -21,9 +21,38 @@ body {
     overflow-y: scroll;
 }
 
+/* Job List Title */
+#jobListTitle {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+/* Job List Positions */
+#jobpostPosition {
+    margin-top: 13px;
+    margin-left: 3px;
+}
+#jobpostCompany {
+    margin-bottom: 3px;
+    margin-left: 3px;
+}
+
+/* Requirement Title */
+#requirementTitle {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Filter Title */
+#filterTitle {
+    margin-top: 10px;
+}
+
 /* Job Requirement */
 #requirement1, #requirement2, #requirement3, #requirement4, #requirement5 {
-    display: inline-block; font-weight: bold
+    display: inline-block;
+    font-weight: bold;
 }
 
 /*Candidate Table tr*/
