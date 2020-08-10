@@ -24,14 +24,14 @@
         <div class="row">
             <!-- Section 1 -->
             <div class="col-3">
-                <h2>Job List</h2>
+                <h2 id="jobListTitle">Job List</h2>
                 <div id="section1" class="list-group list-group-flush overflow-auto border-right">
                     @foreach($table_jobposts as $table_jobposts)
                         <a href="/management/manageCandidates?jobpost_idx={{ $table_jobposts->jobpost_index }}" class="list-group-item list-group-item-action">
-                            <p> {{ $table_jobposts->jobpost_type }} </p>
-                            <h5> {{ $table_jobposts->jobpost_position }} </h5>
-                            <p> {{ $table_jobposts->jobpost_company }} </p>
-                            <p> {{ $table_jobposts->jobpost_location }} </p>
+                            <span class="badge badge-primary"> {{ $table_jobposts->jobpost_type }} </span>
+                            <h5 id="jobpostPosition"> {{ $table_jobposts->jobpost_position }} </h5>
+                            <p id="jobpostCompany"> {{ $table_jobposts->jobpost_company }} </p>
+                            <span class="badge badge-light">{{ $table_jobposts->jobpost_location }}</span>
                         </a>
                     @endforeach
                 </div>
@@ -41,7 +41,7 @@
             <!-- Section 2 -->
             <div id="section2" class="col-9 overflow-auto border-right">
                 <!-- Section 2 - Job Requirement -->
-                <h2>Requirement</h2>
+                <h2 id="requirementTitle">Requirement</h2>
                 <div>
                     <p id="requirement1"> Major: </p>
                     @foreach($table_requirements as $tblReqMajor)
@@ -53,11 +53,11 @@
                     <br>
                     <p id="requirement2"> Education Level: </p>
                     @foreach($table_requirements as $tblReqEduLvl)
-                        @if(!isset($tblReqEduLvl->requirement_education_level))
-                            @break
-                        @endif
-                        {{ $tblReqEduLvl->requirement_education_level }} /
-                    @endforeach
+                            @if(!isset($tblReqEduLvl->requirement_education_level))
+                                @break
+                            @endif
+                            {{ $tblReqEduLvl->requirement_education_level }} /
+                        @endforeach
                     <br>
                     <p id="requirement3"> Location: </p>
                     @foreach($table_requirements as $tblReqLoc)
@@ -69,11 +69,11 @@
                     <br>
                     <p id="requirement4"> Work Experience: </p>
                     @foreach($table_requirements as $tblReqWorkExp)
-                        @if(!isset($tblReqWorkExp->requirement_work_experience))
-                            @break
-                        @endif
-                        {{ $tblReqWorkExp->requirement_work_experience }} /
-                    @endforeach
+                            @if(!isset($tblReqWorkExp->requirement_work_experience))
+                                @break
+                            @endif
+                            {{ $tblReqWorkExp->requirement_work_experience }} /
+                        @endforeach
                     <br>
                     <p id="requirement5"> Status: </p>
                     @foreach($table_requirements as $tblReqStatus)
@@ -82,11 +82,9 @@
                         @endif
                         {{ $tblReqStatus->requirement_visa_status }} /
                     @endforeach
-                    <br>
                 </div>
-                <br><br>
 
-                <h2>Filter</h2>
+                <h2 id="filterTitle">Filter</h2>
                 <div>
                     <p>Filter for all students who satisfied with all requirements</p>
 {{--                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">--}}
@@ -94,16 +92,16 @@
 {{--                    </button>--}}
                     @if(isset($jobpostIdx))
                         <a href="/management/manageCandidates?jobpost_idx={{$jobpostIdx}}&filter_all=true"
-                           class="btn btn-primary" role="button">
-                            All Filters
+                           class="btn btn-primary btn-lg" role="button">
+                            Filter All
                         </a>
                     @endif
                 </div>
-                <br><br>
+                <br>
 
                 <!-- Section 2 - Candidate List -->
                 <h2>Candidate List</h2>
-                <table class="table table-bordered table-striped">
+                <table class="table table-striped">
                     <tr id="candidateTable1">
                         <th>Index</th>
                         <th>Name</th>
