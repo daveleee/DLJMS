@@ -13,17 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Test case
+// Unit Test
 //Route::get('/', function () {
 //    return view('welcome');
 //});
 
-// Management System Index Page
-Route::get('/', function () {
-   return view('index');
-});
+// Index Page
+Route::get('/', 'HomeController@index');
 
 // Management System
-Route::get('/manage', function () {
-   return view('manage')
-});
+Route::get('/management/manageCandidates', 'ManageController@index');
