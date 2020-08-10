@@ -1,0 +1,32 @@
+/* Body */
+body {
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1C2331;
+}
+
+/* Layout - Job List (Scroll with dynamic heights) */
+#section1 {
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+/* Layout - Job Requirement and Candidate List (Scroll with dynamic heights) */
+#section2 {
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+/* Job Requirement */
+#requirement1, #requirement2, #requirement3, #requirement4, #requirement5 {
+    display: inline-block; font-weight: bold
+}
+
+/*Candidate Table tr*/
+#candidateTable1, #candidateTable2 {
+    font-size: small;
+}
