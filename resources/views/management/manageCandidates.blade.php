@@ -16,9 +16,6 @@
 @endsection
 
 @section('body')
-    <!-- Scroll with dynamic heights -->
-    <!-- End Scroll with dynamic heights -->
-
     <!-- Page Content -->
     <div>
         <div class="row">
@@ -87,9 +84,6 @@
                 <h2 id="filterTitle">Filter</h2>
                 <div>
                     <p>Filter for all students who satisfied with all requirements</p>
-{{--                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">--}}
-{{--                        Filter Candidates--}}
-{{--                    </button>--}}
                     @if(isset($jobpostIdx))
                         <a href="/management/manageCandidates?jobpost_idx={{$jobpostIdx}}&filter_all=true"
                            class="btn btn-primary btn-lg" role="button">

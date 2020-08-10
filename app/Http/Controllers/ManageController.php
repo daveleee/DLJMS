@@ -62,7 +62,7 @@ class ManageController extends Controller
     }
 
     public function index(Request $request) {
-        // access the data sent from get request
+        // access the data sent from get method
         $jobpostIndex = $request->input('jobpost_idx');
         $filterAll = $request->input('filter_all');
         $query = "";
